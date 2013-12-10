@@ -1,0 +1,8 @@
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+body {
+	background:url("../img/background.jpg");
+	background-repeat: no-repeat;	
+}

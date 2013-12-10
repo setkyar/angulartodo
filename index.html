@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+    <script src="js/todo.js"></script>
+
+    <link rel="stylesheet" href="css/todo.css">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+
+  <body>
+      <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+          <h2>ANGULAR TO DO LIST</h2>
+            <div ng-controller="TodoCtrl">
+              <span>{{remaining()}} of {{todos.length}} remaining</span>
+              [ <a href="" ng-click="archive()">archive</a> ]
+
+              <ul class="unstyled">
+                <li ng-repeat="todo in todos">
+                  <input type="checkbox" ng-model="todo.done">
+                  <span class="done-{{todo.done}}">{{todo.text}}</span>
+                  <hr>
+                </li>
+              </ul>
+
+              <form ng-submit="addTodo()">
+                <input type="text" ng-model="todoText" placeholder="add new todo here" style="width:70%; margin-left:60px;">
+                <input class="btn-primary" type="submit" value="add">
+              </form>
+            </div>
+        </div>
+      </div>
+  </body>
+</html>
