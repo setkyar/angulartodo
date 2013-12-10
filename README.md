@@ -1,2 +1,4 @@
 angulartodo
 ===========
+
+Simple Angular TODO!!
